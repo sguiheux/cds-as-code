@@ -1,0 +1,7 @@
+name: buildpack-deps-buster
+description: my debian buster worker model
+type: docker
+spec:
+  image: buildpack-deps:buster
+  cmd: curl {{.API}}/download/worker/linux/$(uname -m) -o worker && chmod +x worker && exec ./worker
+  shell: sh -c
