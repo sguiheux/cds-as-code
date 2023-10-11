@@ -32,3 +32,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run a one-line script
         run: echo Hello, world!
+  result:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+    needs: [build]
