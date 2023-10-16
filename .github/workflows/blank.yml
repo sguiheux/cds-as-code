@@ -31,7 +31,9 @@ jobs:
           node-version: ${{ matrix.version }}
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: ${{ toJson(matrix) }}    
+        env:
+          MATRIX_CONTEXT: ${{ toJson(matrix) }}
+        run: echo "$MATRIX_CONTEXT"  
   result:
     runs-on: ubuntu-22.04
     steps:
