@@ -18,9 +18,11 @@ jobs:
   # This workflow contains a single job called "build"
   test:
     runs-on: ubuntu-22.04
+    id: test
     steps:
       - run: echo "test=boum" >> $GITHUB_OUTPUT
   build:
+    id: build
     strategy:
       matrix:
         os: [ubuntu-22.04, ubuntu-20.04]
