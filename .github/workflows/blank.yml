@@ -39,4 +39,8 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
+      - name: Display context
+        env:
+          JOBS_CONTEXT: ${{ toJson(jobs) }}
+          run: echo "$JOBS_CONTEXT"
     needs: [build]
