@@ -42,5 +42,5 @@ jobs:
       - name: Display context
         env:
           JOBS_CONTEXT: ${{ toJson(jobs) }}
-          run: echo "$JOBS_CONTEXT"
+        run: echo "$JOBS_CONTEXT"
     needs: [build]
