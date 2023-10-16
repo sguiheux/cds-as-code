@@ -17,7 +17,8 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   test:
-    - run: echo "test=boum" >> $GITHUB_OUTPUT
+    steps:
+      - run: echo "test=boum" >> $GITHUB_OUTPUT
   build:
     strategy:
       matrix:
