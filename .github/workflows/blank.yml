@@ -21,6 +21,8 @@ jobs:
     steps:
       - run: echo "test=boum" >> $GITHUB_OUTPUT
         id: step1
+    outputs:
+      output1: ${{ steps.step1.outputs.test }} 
   build:
     strategy:
       matrix:
@@ -38,6 +40,8 @@ jobs:
       - name: Run a one-line script
         run: echo "oss=${{matrix.os}}" >> $GITHUB_OUTPUT
         id: buildstep
+    outputs:
+      output1: ${{ steps.buildstep.outputs.oss }}    
   result:
     runs-on: ubuntu-22.04
     needs: [build,test]
