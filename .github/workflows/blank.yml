@@ -18,9 +18,9 @@ jobs:
   # This workflow contains a single job called "build"
   test:
     runs-on: ubuntu-22.04
-    id: test
     steps:
       - run: echo "test=boum" >> $GITHUB_OUTPUT
+        id: step1
   build:
     strategy:
       matrix:
@@ -37,6 +37,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run a one-line script
         run: echo "oss=${{matrix.os}}" >> $GITHUB_OUTPUT
+        id: buildstep
   result:
     runs-on: ubuntu-22.04
     needs: [build,test]
