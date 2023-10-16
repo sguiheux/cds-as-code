@@ -22,7 +22,6 @@ jobs:
     steps:
       - run: echo "test=boum" >> $GITHUB_OUTPUT
   build:
-    id: build
     strategy:
       matrix:
         os: [ubuntu-22.04, ubuntu-20.04]
@@ -31,6 +30,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
+    id: build
     steps:
       - uses: actions/setup-node@v3
         with:
