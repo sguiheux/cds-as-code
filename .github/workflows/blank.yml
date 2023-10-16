@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   test:
+    runs-on: ubuntu-22.04
     steps:
       - run: echo "test=boum" >> $GITHUB_OUTPUT
   build:
