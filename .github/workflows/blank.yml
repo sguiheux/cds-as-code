@@ -31,7 +31,7 @@ jobs:
           node-version: ${{ matrix.version }}
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: env
   result:
     runs-on: ubuntu-22.04
     steps:
