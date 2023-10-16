@@ -30,7 +30,6 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    id: build
     steps:
       - uses: actions/setup-node@v3
         with:
