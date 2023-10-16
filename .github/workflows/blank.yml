@@ -31,8 +31,6 @@ jobs:
           node-version: ${{ matrix.version }}
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: ${{ toJson(github) }}  
-      - name: Run a one-line script
         run: ${{ toJson(matrix) }}    
   result:
     runs-on: ubuntu-22.04
