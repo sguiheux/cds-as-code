@@ -45,6 +45,7 @@ jobs:
   result:
     runs-on: ubuntu-22.04
     needs: [build,test]
+    if: 1 == 2
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
@@ -56,3 +57,9 @@ jobs:
         env:
           NEEDS_CONTEXT: ${{ toJson(needs.test) }}
         run: echo "$NEEDS_CONTEXT"
+  afterSkip:
+    runs-on: ubuntu-22.04
+    needs: [result,build]
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
