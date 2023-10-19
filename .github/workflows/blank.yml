@@ -61,6 +61,7 @@ jobs:
     runs-on: ubuntu-22.04
     needs: [result,test]
     if: always()
+    environment: prod
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
