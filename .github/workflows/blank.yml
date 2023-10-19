@@ -66,6 +66,6 @@ jobs:
         run: echo Hello, world!
   last:
     runs-on: ubuntu-22.04
-    needs: [afterSkip]
+    needs: [afterSkip]
     steps:
       - run: echo End 
