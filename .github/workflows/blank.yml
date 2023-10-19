@@ -60,6 +60,7 @@ jobs:
   afterSkip:
     runs-on: ubuntu-22.04
     needs: [result,test]
+    if: always() && needs.test.result == 'success'
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
