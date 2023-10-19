@@ -67,5 +67,6 @@ jobs:
   last:
     runs-on: ubuntu-22.04
     needs: [afterSkip]
+    if: success()
     steps:
       - run: echo End 
