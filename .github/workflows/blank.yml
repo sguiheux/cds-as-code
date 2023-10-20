@@ -17,12 +17,12 @@ on:
 jobs:
   init:
     runs-on: ubuntu-22.04
-    continue-on-error: true
     steps:
       - run: exit 1
   build:
     runs-on: ubuntu-22.04
     needs: [init]
+    if: ${{failure()}}
     steps:
       - name: Run a one-line script
         run: echo "coucou"
