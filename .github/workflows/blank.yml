@@ -22,13 +22,14 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     needs: [init]
-    if: ${{failure()}}
+    if: ${{always()}}
     steps:
       - name: Run a one-line script
         run: echo "coucou"
   result:
     runs-on: ubuntu-22.04
     needs: [build]
+    if: ${{success()}}
     env: 
       CTX: ${{toJson(needs)}}
     steps:
