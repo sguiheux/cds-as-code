@@ -32,4 +32,6 @@ jobs:
     if: $${{failure() && success()}}
     steps:
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: echo ${{failure()}}
+      - name: Run a one-line script
+        run: echo ${{success()}}  
