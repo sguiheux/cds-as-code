@@ -29,7 +29,6 @@ jobs:
   result:
     runs-on: ubuntu-22.04
     needs: [build]
-    if: $${{success()}}
     env: 
       CTX: ${{toJson(needs)}}
     steps:
