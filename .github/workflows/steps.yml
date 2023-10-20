@@ -29,4 +29,5 @@ jobs:
         run: echo "toto" 
         if: failure()
       - name: Run a one-line script
-        run: echo "tata"     
+        run: echo "tata"   
+        if: success()
