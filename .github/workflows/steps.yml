@@ -27,6 +27,6 @@ jobs:
         run: exit 1
       - name: Run a one-line script
         run: echo "toto" 
-        if: always()
+        if: failure()
       - name: Run a one-line script
         run: echo "tata"     
