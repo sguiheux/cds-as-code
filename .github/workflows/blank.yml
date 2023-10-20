@@ -17,8 +17,9 @@ on:
 jobs:
   init:
     runs-on: ubuntu-22.04
+    if: 1 == 2
     steps:
-      - run: exit 1
+      - run: exit 0
   build:
     runs-on: ubuntu-22.04
     needs: [init]
