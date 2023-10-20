@@ -30,6 +30,8 @@ jobs:
     runs-on: ubuntu-22.04
     needs: [build]
     if: $${{failure() && success()}}
+    env: 
+      CTX: ${{toJson(needs)}}
     steps:
       - name: Run a one-line script
-        run: echo ${{toJson(needs)}}
+        run: echo $CTX
