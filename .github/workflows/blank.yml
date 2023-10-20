@@ -29,6 +29,7 @@ jobs:
   result:
     runs-on: ubuntu-22.04
     needs: [build]
+    if: $${{failure() && success()}}
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
