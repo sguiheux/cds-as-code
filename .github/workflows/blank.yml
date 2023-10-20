@@ -32,4 +32,4 @@ jobs:
     if: $${{failure() && success()}}
     steps:
       - name: Run a one-line script
-        run: echo ${{toJson(jobs.build)}}
+        run: echo ${{toJson(needs)}}
