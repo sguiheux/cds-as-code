@@ -15,6 +15,10 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  init2:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: exit 1
   init:
     runs-on: ubuntu-22.04
     continue-on-error: true
@@ -26,6 +30,12 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo "coucou"
+  build2:
+    runs-on: ubuntu-22.04
+    needs: [init]
+    steps:
+      - name: Run a one-line script
+        run: exit 1      
   result:
     runs-on: ubuntu-22.04
     needs: [build]
