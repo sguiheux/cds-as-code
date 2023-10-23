@@ -31,6 +31,7 @@ jobs:
     needs: [build]
     env: 
       CTX: ${{toJson(needs)}}
+    if: ${{ !failure() }}  
     steps:
       - name: Run a one-line script
         run: echo $CTX
