@@ -23,6 +23,7 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     needs: [init]
+    if: ${{ needs.init.result == 'success' }}
     steps:
       - name: Run a one-line script
         run: echo "coucou"  
