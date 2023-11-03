@@ -22,10 +22,12 @@ jobs:
       AA: ${{ vars.toto }}
     steps:
       - run: echo ${{ vars.toto }}
+      - run: echo ${{ vars.TOTO }}
       - run: echo $AA
-      - run: echo $VARS_TOTO
-      - run: echo $TOTO
-      - run: exit 1
+      - run: echo $ENV_AA
+      - run: echo ${{ env.AA }}
+      - run: echo ${{ env.aa }}
+  
       
   build:
     runs-on: ubuntu-22.04
