@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-22.04
     continue-on-error: true
     env:
-      AA: ${{ vars.toto }}
+      AA: coucou
     steps:
       - run: echo ${{ vars.toto }}
       - run: echo ${{ vars.TOTO }}
