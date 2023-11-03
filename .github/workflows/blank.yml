@@ -24,6 +24,7 @@ jobs:
       - run: echo ${{ vars.toto }}
       - run: echo ${{ vars.TOTO }}
       - run: echo $AA
+      - run: echo $TOTO
       - run: echo $ENV_AA
       - run: echo ${{ env.AA }}
       - run: echo ${{ env.aa }}
