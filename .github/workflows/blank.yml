@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-22.04
     continue-on-error: true
     steps:
+      - run: echo ${{ vars.toto }}
       - run: exit 1
   build:
     runs-on: ubuntu-22.04
