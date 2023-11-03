@@ -18,9 +18,15 @@ jobs:
   init:
     runs-on: ubuntu-22.04
     continue-on-error: true
+    env:
+      AA: ${{ vars.toto }}
     steps:
       - run: echo ${{ vars.toto }}
+      - run: echo $AA
+      - run: echo $VARS_TOTO
+      - run: echo $TOTO
       - run: exit 1
+      
   build:
     runs-on: ubuntu-22.04
     needs: [init]
