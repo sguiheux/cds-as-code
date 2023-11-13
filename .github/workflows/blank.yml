@@ -21,17 +21,10 @@ jobs:
       - run: echo "bonjour"
   init:
     runs-on: ubuntu-22.04
-    continue-on-error: true
     env:
       AA: coucou
     steps:
-      - run: echo ${{ vars.toto }}
-      - run: echo ${{ vars.TOTO }}
-      - run: echo $AA
-      - run: echo $TOTO
-      - run: echo $ENV_AA
-      - run: echo ${{ env.AA }}
-      - run: echo ${{ env.aa }}
+      - run: exit 1
   
       
   build:
