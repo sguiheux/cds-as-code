@@ -23,6 +23,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
+      - name: output
+        run: |-
+          echo "firstword=hello" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
+      - name: output2
+        run: cat $GITHUB_OUTPUT
       - name: Run a one-line script
         run: exit 1
       - name: Run a one-line script
