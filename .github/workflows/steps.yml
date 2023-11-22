@@ -29,11 +29,5 @@ jobs:
           cat $GITHUB_OUTPUT
       - name: output2
         run: cat $GITHUB_OUTPUT
-      - name: Run a one-line script
-        run: exit 1
-      - name: Run a one-line script
-        run: echo "toto" 
-        if: failure()
-      - name: Run a one-line script
-        run: echo "tata"   
-        if: success()
+    outputs:
+      firstword:1: ${{ steps.output.firstword:1}}
