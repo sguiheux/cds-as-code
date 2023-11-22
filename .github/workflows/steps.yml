@@ -25,7 +25,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: output
         run: |-
-          echo "firstword=hello" >> $GITHUB_OUTPUT
+          echo "firstword:1=hello" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
       - name: output2
         run: cat $GITHUB_OUTPUT
