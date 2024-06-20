@@ -27,9 +27,10 @@ jobs:
         with:
           who-to-greet: 'Mona the Octocat'
           variables: ${{ env.GITHUB }}
-          event: ${{ github.event }}
+          event: ${{ env.EVENT }}
         env:
           GITHUB: ${{ toJson(vars) }}
+          EVENT: ${{ toJson(github.event) }}
       - run: echo random-number "$RANDOM_NUMBER"
         shell: bash
         env:
