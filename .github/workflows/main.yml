@@ -23,7 +23,7 @@ jobs:
         env:
          TITI: ${{ toJson(steps) }}
       - id: foo
-        uses: sguiheux/hello-world-composite-action@v12
+        uses: sguiheux/hello-world-composite-action@v13
         with:
           who-to-greet: 'Mona the Octocat'
           variables: ${{ env.GITHUB }}
