@@ -12,8 +12,9 @@ jobs:
         uses: sguiheux/hello-world-composite-action@v3
         with:
           who-to-greet: 'Mona the Octocat'
-          variables: ${{ vars }}
-          secrets: ${{ secrets }}
+          variables: ${{ env.GITHUB }}
+        env:
+          GITHUB: ${{ toJson(vars) }}
       - run: echo random-number "$RANDOM_NUMBER"
         shell: bash
         env:
