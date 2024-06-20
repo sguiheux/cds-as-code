@@ -3,9 +3,11 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
+    environment: prod
     name: A job to say hello
     steps:
       - uses: actions/checkout@v4
+      - run: echo "${{ env.ENV_VAR}} - ${{ env.ENV_SECRET}}"
       - id: foo
         uses: sguiheux/hello-world-composite-action@v1
         with:
