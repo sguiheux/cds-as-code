@@ -8,6 +8,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo "${{ vars.ENV_VAR}} - ${{ secrets.ENV_SECRET}}"
+      - name: Display github context
+        run: |
+          echo "Steps context:"
+          echo "${TITI}"
+        shell: bash
+        env:
+         TITI: ${{ toJson(steps) }}
       - id: foo
         uses: sguiheux/hello-world-composite-action@v9
         with:
