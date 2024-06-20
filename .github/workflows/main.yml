@@ -12,7 +12,9 @@ jobs:
     needs: [toto]
     steps:
       - uses: actions/checkout@v4
-      - run: echo "${{ vars.ENV_VAR}} - ${{ secrets.ENV_SECRET}}"
+        id: checkout
+      - run: echo "${{ vars.ENV_VAR}} - ${{ secrets.ENV_SECRET}}" >> $GITHUB_OUPUT
+        id: poupou
       - name: Display github context
         run: |
           echo "Steps context:"
