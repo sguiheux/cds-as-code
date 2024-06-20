@@ -1,10 +1,15 @@
 on: [push]
 
 jobs:
+  toto:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
   hello_world_job:
     runs-on: ubuntu-latest
     environment: prod
     name: A job to say hello
+    needs: [toto]
     steps:
       - uses: actions/checkout@v4
       - run: echo "${{ vars.ENV_VAR}} - ${{ secrets.ENV_SECRET}}"
@@ -16,7 +21,7 @@ jobs:
         env:
          TITI: ${{ toJson(steps) }}
       - id: foo
-        uses: sguiheux/hello-world-composite-action@v9
+        uses: sguiheux/hello-world-composite-action@v10
         with:
           who-to-greet: 'Mona the Octocat'
           variables: ${{ env.GITHUB }}
