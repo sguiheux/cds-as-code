@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: echo "${{ vars.ENV_VAR}} - ${{ secrets.ENV_SECRET}}"
       - id: foo
-        uses: sguiheux/hello-world-composite-action@v5
+        uses: sguiheux/hello-world-composite-action@v6
         with:
           who-to-greet: 'Mona the Octocat'
           variables: ${{ env.GITHUB }}
