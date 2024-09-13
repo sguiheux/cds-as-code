@@ -12,9 +12,9 @@ jobs:
     needs: [toto]
     steps:
       - uses: actions/checkout@v4
-        id: checkout
+        id: checkout-aa
       - run: echo "MYOUTPUT=${{ vars.ENV_VAR}}" >> $GITHUB_OUTPUT 
-        id: poupou
+        id: poupou_plipli
       - name: Display github context
         run: |
           echo "Steps context:"
