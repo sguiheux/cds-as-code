@@ -15,6 +15,7 @@ jobs:
         id: checkout-aa
       - run: echo "MYOUTPUT=${{ vars.ENV_VAR}}" >> $GITHUB_OUTPUT 
         id: poupou_plipli
+        if: 1 == 2
       - name: Display github context
         run: |
           echo "Steps context:"
