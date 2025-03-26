@@ -1,6 +1,6 @@
 name: myworkflow
 jobs:
   root:
-    runs-on: library/default-container
+    runs-on: .cds/worker-models/buildpack-deps-buster.yml
     steps:
     - run: echo Coucou
