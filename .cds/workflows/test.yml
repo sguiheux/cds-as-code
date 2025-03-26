@@ -3,4 +3,4 @@ jobs:
   root:
     runs-on: .cds/worker-models/buildpack-deps-buster.yml
     steps:
-    - run: echo Coucou
+    - uses: actions/checkout
